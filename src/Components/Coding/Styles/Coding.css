@@ -1,0 +1,8 @@
+.Coding-sec{
+    background-color: #212124;
+    resize: horizontal;
+    overflow-x: auto;
+}
+.Coding-sec h1{
+    color: var(--font-white);
+}

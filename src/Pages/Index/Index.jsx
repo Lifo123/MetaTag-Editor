@@ -1,8 +1,8 @@
 import './Styles/Index.css'
+import { useEffect } from 'react'
 
 import Coding from '../../Components/Coding/Coding'
 import Result from '../../Components/Result/Result'
-import { useEffect } from 'react'
 
 
 export default function Index({setProgress}) {
@@ -14,8 +14,10 @@ export default function Index({setProgress}) {
             setProgress(100);
         }, 200)
     }, [])
+
+
     return (
-        <main className='d-grid app-render fixed h-100 w-100'>
+        <main className='f-row app-render fixed h-100 w-100'>
             <Coding />
             <Result />
         </main>
