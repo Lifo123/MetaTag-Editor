@@ -2,3 +2,26 @@
     height: 100% !important;
     overflow-x: scroll;
 }
+
+:not(pre)>code.hljs, :not(pre)>code[class*=language-] {
+    border-radius: .3em;
+    padding: .1em;
+    white-space: normal;
+}
+code.hljs, code[class*=language-], pre[class*=language-] {
+    word-wrap: normal;
+    background: none;
+    color: #fff;
+    -webkit-hyphens: none;
+    hyphens: none;
+    line-height: 1.5;
+    tab-size: 4;
+    text-align: left;
+    white-space: pre;
+    word-break: normal;
+    word-spacing: normal;
+}
+
+.\!whitespace-pre {
+    white-space: pre !important;
+}

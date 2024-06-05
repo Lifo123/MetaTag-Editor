@@ -1,11 +1,46 @@
 .app-render{
-    
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
 }
 
-.drag-v{
-    background-color: red;
-    width: 5px;
+.resizer-l{
+    background-color: #333333;
+    height: 100%;
+    width: 4px;
+    display: block;
+    top: 0;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
+    user-select: none;
+    cursor: e-resize;
+    transition: width 0.06s, background-color 0.2s;
+}
+.resizer-l:hover{
+    background-color: #007ACC;
+    width: 7px !important;
+}
+.resizer-l.active{
+    background-color: #007ACC;
+    width: 7px !important;
+}
+
+
+.code{
+    background-color: #1E1E1E;
+    width: 50%;
+    overflow: auto;
+}
+.code > .f-col{
+    flex-wrap: nowrap;
+    width: max-content;
+}
+
+
+.view{
+    overflow: auto;
+}
+.view > .f-col{
+    width: max-content;
 }
