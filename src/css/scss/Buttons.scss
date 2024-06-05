@@ -1,0 +1,25 @@
+.btn {
+  padding: 12px 32px;
+  width: max-content;
+  text-decoration: none;
+}
+
+.f-btn-blue {
+  background-color: var(--font-link);
+  padding: 5px 20px;
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--font-white);
+  cursor: pointer;
+  user-select: none;
+}
+
+.pointer {
+  cursor: pointer;
+  user-select: none;
+}
+
+.no-select {
+  user-select: none;
+  pointer-events: none;
+}
