@@ -10,9 +10,14 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+*./scss
 *.local
+*/build
+*build
+scss
 
 # Editor directories and files
+*./src/css/scss
 .vscode/*
 !.vscode/extensions.json
 .idea
@@ -22,3 +27,5 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+src/css/scss
