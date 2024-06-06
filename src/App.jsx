@@ -8,7 +8,7 @@ function App() {
 
   return (
     <GlobalContext>
-      <BrowserRouter>
+      <BrowserRouter basename="MetaTag-Editer/">
         <AppRoutes />
       </BrowserRouter>
     </GlobalContext>

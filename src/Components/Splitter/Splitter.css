@@ -1,0 +1,68 @@
+.split-btn {
+    background-color: #333333;
+    display: block;
+    user-select: none;
+    transition: width 0.06s, background-color 0.2s, height 0.06s;
+    z-index: 9999;
+}
+.split-btn.horizontal{
+    height: 100%;
+    width: 4px;
+    transform: translateX(-50%);
+    top: 0;
+    cursor: e-resize;
+}
+.split-btn.vertical{
+    height: 4px;
+    width: 100%;
+    transform: translateY(-50%);
+    left: 0;
+    cursor: n-resize;
+}
+.split-btn.horizontal:hover {
+    background-color: #007ACC;
+    width: 8px;
+}
+.split-btn.vertical:hover {
+    background-color: #007ACC;
+    height: 8px;
+}
+
+.split-btn.active {
+    background-color: #007ACC;
+    z-index: 1000;
+}
+
+
+
+.split-container {
+    overflow: hidden;
+    z-index: 1000;
+    position: relative;
+}
+.split-container.horizontal{
+    display: flex;
+    flex-direction: row;
+}
+.split-container.vertical{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.split-sec1 {
+    overflow: auto;
+}
+.split-sec1.horizontal {
+    width: 50%;
+}
+.split-sec1.vertical {
+    height: 50%;
+}
+
+
+.split-sec2 {
+    overflow: auto;
+    width: max-content;
+    flex: 1;
+}

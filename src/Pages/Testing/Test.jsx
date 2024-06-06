@@ -1,4 +1,4 @@
-import './Styles/Index.css'
+import './Test.css'
 import { useEffect } from 'react'
 
 import Coding from '../../Components/Coding/Coding'
@@ -21,12 +21,13 @@ export default function Index({ setProgress }) {
 
     return (
         <>
-            <main className='app-render fixed h-100 w-100'>
-                <SplitterContainer type={'horizontal'} base={50}>
+            <main className='Test br-10'>
+                <SplitterContainer>
                     <Coding />
                     <Result />
                 </SplitterContainer>
             </main>
+
         </>
     );
 }

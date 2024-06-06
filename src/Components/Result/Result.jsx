@@ -1,44 +1,74 @@
-
+import './Styles/Result.css'
+import { useContext } from 'react'
+import { GContext } from '../../Context/GlobalContext'
 
 export default function Result() {
+    const AppContext = useContext(GContext);
+
     return (
-        <section className="f-col result-sec h-100 ">
-            <div class="index-preview__slide">
-                <header class="index-preview__header">
-                    <h3>Preview</h3>
-                </header>
-                <div class="index-metadata__content">
-                    <div id="google" class="metadata-group__display is-active">
-                        <h4 class="metadata-group__title"><span>Google</span></h4>
-                        <div class="card-seo-google">
-                            <span class="card-seo-google__title js-preview-title">Manage Tournaments</span>
-                            <div class="card-seo-google__url"><span class="card-seo-google__url-title js-preview-domain">https://lifo123.github.io/ManageTournaments/</span>
-                                <span class="card-seo-google__url-arrow"></span>
+        <div className='result f-col px-5 py-4'>
+            <h3>Preview</h3>
+
+            <section className="r-item r-google">
+                <h4>Google</h4>
+                <div className="f-col g-5 me-2 mb-2 mt-3">
+                    <label className='r-i-title f-col g-5 pointer'>
+                        <div className='f-row g-10 f-align-center'>
+                            <span className='ski'></span>
+                            <div className='r-i-redirect f-col'>
+                                <p>Manage Tournamets</p>
+                                <p>https://lifo123.github.io/ManageTournaments/</p>
                             </div>
-                            <span class="card-seo-google__description js-preview-description">Manage Tournamentes complety 'FREE' in our website without any cost</span>
+                            <span className='d-flex me-1' style={{ height: '20px' }}>
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" strokeWidth={0.2}></path>
+                                </svg>
+                            </span>
                         </div>
+                        <h2 className='mt-1'>Manage Tournaments</h2>
+                    </label>
+                    <span>Manage ut any cost Manage Tournamentes complety 'FREE' in our website without any cost Manage Tournamentes complety 'FREE' in our website without any cost Manage Tournamentes complety 'FREE' in our website without any cost</span>
+                </div>
+                <div className="g-sec f-col g-5 me-2 mt-3">
+                    <label className='f-col'>
+                        <h2 >Manage Tournaments</h2>
+                        <span className='f-row g-10 f-align-center pointer'>
+                            <p className='green'>https://lifo123.github.io/ManageTournaments/</p>
+                            <span className='triangle'></span>
+                        </span>
+                    </label>
+                    <span>Manage ut any cost Manage Tournamentes complety 'FREE' in our website without any cost Manage Tournamentes complety 'FREE' in our website without any cost Manage Tournamentes complety 'FREE' in our website without any cost</span>
+                </div>
+            </section>
+
+            <section className="r-item r-twitter mt-4">
+                <h4>Twitter</h4>
+                <div className='i-card me-2 pointer'>
+                    <span className='d-flex no-select'>
+                        <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/01/how-to-join-a-fortnite-tournament.jpg" />
+                    </span>
+                    <div className='f-col g-5'>
+                        <h3 className='no-select'>Manage Tournaments</h3>
+                        <p className='description no-select'>Manage ut any cost Manage Tournamentes complety 'FREE' in our website without any cost</p>
+                        <p className='no-select'>lifo123.github.io</p>
                     </div>
                 </div>
-                <code class="!whitespace-pre hljs language-json">
-                    <span class="hljs-punctuation">{'{'}</span>
-                    <span class="hljs-attr">"scripts"</span>
-                    <span class="hljs-punctuation">:</span>
-                    <span class="hljs-punctuation">{'{'}</span>
-                    <span class="hljs-attr">"build"</span>
-                    <span class="hljs-punctuation">:</span>
-                    <span class="hljs-string">"vite build"</span>
-                    <span class="hljs-punctuation">,</span>
-                    <span class="hljs-attr">"predeploy"</span>
-                    <span class="hljs-punctuation">:</span>
-                    <span class="hljs-string">"npm run build"</span>
-                    <span class="hljs-punctuation">,</span>
-                    <span class="hljs-attr">"deploy"</span>
-                    <span class="hljs-punctuation">:</span>
-                    <span class="hljs-string">"gh-pages -d build"</span>
-                    <span class="hljs-punctuation">{'}'}</span>
-                    <span class="hljs-punctuation">{'}'}</span>
-                </code>
-            </div>
-        </section>
+            </section>
+
+            <section className="r-item r-facebook mt-4">
+                <h4>Facebook</h4>
+                <div className='i-card me-2 pointer'>
+                    <span className='d-flex no-select'>
+                        <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/01/how-to-join-a-fortnite-tournament.jpg" />
+                    </span>
+                    <div className='f-col g-5 no-select'>
+                        <p>lifo123.github.io</p>
+                        <h3>Manage Tournaments</h3>
+                        <p className='description'>Manage ut any cost Manage Tournamentes complety 'FREE' in our website without any cost</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
     )
 }
