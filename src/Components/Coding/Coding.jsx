@@ -9,7 +9,7 @@ export default function Coding() {
     const AppContext = useContext(GContext);
 
     //States
-    const [buttonText, setButtonText] = useState('Copiar');
+    const [buttonText, setButtonText] = useState('Copy');
     const [CopyText, setCopyText] = useState('');
 
     //Functions
@@ -20,10 +20,7 @@ export default function Coding() {
             const start = textarea.selectionStart;
             const end = textarea.selectionEnd;
 
-            // Set textarea value to: text before caret + tab + text after caret
             textarea.value = textarea.value.substring(0, start) + "\t" + textarea.value.substring(end);
-
-            // Put caret at right position again
             textarea.selectionStart = textarea.selectionEnd = start + 1;
         }
     }
@@ -51,6 +48,12 @@ export default function Coding() {
         }
     }, [])
 
+    useEffect(() => {
+        setTimeout(() => {
+            setButtonText('Copy');
+        }, 4000)
+    }, [buttonText])
+
     return (
         <div className='Coding-sec f-col px-3 py-2'>
             <section className='f-col relative h-100 w-100 g-20'>
@@ -64,27 +67,25 @@ export default function Coding() {
                         <p>HTML</p>
                     </div>
                     <textarea className='vsc-sm br-8 p-3' txtg={'vsc-sm'} onKeyDown={HandleTab} onChange={handleTextareaChange} defaultValue={`<meta property="og:title" content="${AppContext.MetaTag.title}" />
+<meta property="og:site_name" content="${AppContext.MetaTag.siteName}" />
 <meta property="og:description" content="${AppContext.MetaTag.description}" />
 <meta property="og:url" content="${AppContext.MetaTag.url}" />
-<meta property="og:image" content="${AppContext.MetaTag.image}" />
-<meta property="og:site_name" content="${AppContext.MetaTag.siteName}" />`} spellCheck='false'></textarea>
+<meta property="og:image" content="${AppContext.MetaTag.image}" />`} spellCheck='false'></textarea>
                 </label>
 
                 <CopyToClipboard text={CopyText} onCopy={(e) => setButtonText('Copied')}>
                     <span className='btn btn-primary relative d-flex br-6'>{buttonText}</span>
                 </CopyToClipboard>
-                <footer className='cod-fot f-row absolute f-align-center f-justify-between'>
-                    <a href='https://github.com/Lifo123'>Lifo123</a>
+                <footer className='cod-fot f-row absolute f-align-center f-justify-between w-100 g-10'>
+                    <a href='https://github.com/Lifo123' target='_blank'>Lifo123</a>
                     <div className='f-row g-10'>
-                        <span className="ski"></span>
-                        <span className="ski"></span>
-                        <span className="ski"></span>
-                        <Link to={'/Test'} className='ski'>Ref</Link>
+                        <a href='https://github.com/Lifo123/MetaTag-Editor' target='_blank'>Repository</a>
+                        <Link to={'/Test'}>Documentation</Link>
+                        <Link to={'/Test'} >Terms</Link>
+                        <Link to={'/Test'} >Settings</Link>
                     </div>
                 </footer>
             </section>
         </div>
     )
 }
-
-document.querySelectorAll('vsc-sm').value;

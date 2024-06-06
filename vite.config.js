@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/MetaTag-Editer/',
+  base: '/MetaTag-Editor/#/',
   plugins: [react()],
   build: {
     outDir: 'build'

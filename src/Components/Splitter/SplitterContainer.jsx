@@ -15,11 +15,11 @@ export default function SplitterContainer({ children, type = 'horizontal', base 
 
     return (
         <>
-            <section className={`split-sec1 ${Type}`} style={Type === 'vertical' ? { height: `${base || 50}%` } : { width: `${base || 50}%` }}>{children && children[0] || <p>Div 1</p>}</section>
+            <section className={`split-sec1 d-flex relative ${Type}`} style={Type === 'vertical' ? { height: `${base || 50}%` } : { width: `${base || 50}%` }}>{children && children[0] || <p>Div 1</p>}</section>
 
             <span className={`split-btn absolute ${Type}`} onMouseDown={Resizer} style={Type === 'vertical' ? { top: `${base || 50}%` } : { left: `${base || 50}%` }} ref={splitRef}></span>
 
-            <section className={`split-sec2 ${Type}`}>{children && children[1] || <p>Div 2   </p>}</section>
+            <section className={`split-sec2 d-flex relative ${Type}`}>{children && children[1] || <p>Div 2   </p>}</section>
         </>
     )
 }

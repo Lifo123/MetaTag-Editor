@@ -1,4 +1,4 @@
-import { BrowserRouter } from "react-router-dom"
+import { BrowserRouter, HashRouter } from "react-router-dom"
 import GlobalContext from "./Context/GlobalContext"
 import AppRoutes from "./Routes/AppRoutes"
 
@@ -8,9 +8,9 @@ function App() {
 
   return (
     <GlobalContext>
-      <BrowserRouter basename="MetaTag-Editer/">
+      <HashRouter>
         <AppRoutes />
-      </BrowserRouter>
+      </HashRouter>
     </GlobalContext>
   )
 }
