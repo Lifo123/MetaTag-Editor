@@ -63,6 +63,5 @@
 
 .split-sec2 {
     overflow: auto;
-    width: max-content;
     flex: 1;
 }

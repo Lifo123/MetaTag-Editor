@@ -1,6 +1,7 @@
 .Coding-sec {
     background-color: #1E1E1E;
     height: 100%;
+    overflow: hidden;
 }
 
 .Coding-sec h3 {
@@ -12,7 +13,7 @@
 
 
 .code-section {
-    border: solid 1px #2D2D30;
+    border: solid 1px #353538;
     overflow: hidden;
     height: fit-content;
 }
@@ -23,10 +24,11 @@
     width: 100%;
     background-color: #252526;
     resize: vertical;
-    color: #fff;
+    color: #efefef;
     overflow: hidden;
     text-wrap: nowrap;
-    min-height: 140px;
+    min-height: 200px;
+    height: 450px;
     line-height: 22px;
 }
 
@@ -89,4 +91,27 @@
     color: #FFF;
     z-index: 10;
     font-weight: 400;
+}
+
+.cod-fot{
+    height: 50px;
+    width: 100%;
+    bottom: 0px;
+}
+.cod-fot a{
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #e8e8e8;
+}
+.cod-fot .ski{
+    height: 30px;
+    width: 30px;
+}
+
+
+@media (max-width: 840px) {
+    .cod-fot{
+        display: none;
+    }
 }

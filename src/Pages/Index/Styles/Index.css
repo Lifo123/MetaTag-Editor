@@ -2,9 +2,3 @@
     display: flex;
 
 }
-
-@media (max-width: 840px) {
-    .app-render {
-        flex-direction: column;
-    }
-}

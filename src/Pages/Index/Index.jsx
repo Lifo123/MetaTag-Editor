@@ -9,8 +9,6 @@ import SplitterContainer from '../../Components/Splitter/SplitterContainer';
 export default function Index({ setProgress }) {
     // Global States
 
-
-
     // Effects
     useEffect(() => {
         setProgress(30);
@@ -22,7 +20,7 @@ export default function Index({ setProgress }) {
     return (
         <>
             <main className='app-render fixed h-100 w-100'>
-                <SplitterContainer type={'horizontal'} base={50}>
+                <SplitterContainer type={window.innerWidth < 840 ? 'vertical' : 'horizontal'} base={52}>
                     <Coding />
                     <Result />
                 </SplitterContainer>

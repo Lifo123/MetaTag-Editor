@@ -13,6 +13,7 @@ dist-ssr
 *.local
 **/build
 **/scss
+src/css/scss
 
 
 # Editor directories and files

@@ -1,10 +1,14 @@
-import { useEffect, useState } from 'react'
 import './Styles/Coding.css'
+import { GContext } from '../../Context/GlobalContext';
+import { useContext, useEffect, useState } from 'react'
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { Helmet } from 'react-helmet-async';
 
 export default function Coding() {
+    //GlobalStates
+    const AppContext = useContext(GContext);
+
     //States
+    const [buttonText, setButtonText] = useState('Copiar');
     const [CopyText, setCopyText] = useState('');
 
     //Functions
@@ -24,23 +28,32 @@ export default function Coding() {
     }
     const handleTextareaChange = (e) => {
         setCopyText(e.target.value);
+
+        const value = e.target.value;
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(value, 'text/html');
+
+        const title = doc.querySelector('meta[property="og:title"]')?.content || AppContext.MetaTag.title;
+        const description = doc.querySelector('meta[property="og:description"]')?.content;
+        const url = doc.querySelector('meta[property="og:url"]')?.content;
+        const image = doc.querySelector('meta[property="og:image"]')?.content;
+        const siteName = doc.querySelector('meta[property="og:site_name"]')?.content;
+
+        AppContext.setMetaTags({ title, description, url, image, siteName });
     };
 
     useEffect(() => {
-        setCopyText(document.querySelectorAll('[txtg="vsc-sm"]')[0].defaultValue)
+        setCopyText(document.querySelectorAll('[txtg="vsc-sm"]')[0].defaultValue);
+        if (localStorage.getItem('MetaTagEdit')) {
+            let dataSaved = localStorage.getItem('MetaTagEdit');
+            AppContext.setMetaTags(JSON.parse(dataSaved));
+        }
     }, [])
 
     return (
-        <div className='Coding-sec f-col p-3'>
-            <Helmet>
-                <meta property="p:title" content="Manage Tournaments" />
-                <meta property="p:description" content="Manage Tournamentes complety 'FREE' in our website without any cost" />
-                <meta property="p:url" content="https://Lifo123.github.io/ManageTournaments/" />
-                <meta property="p:site_name" content="Manage Tournaments" />
-                <meta property="p:type" content="website" />
-            </Helmet>
-            <section className='f-col w-100 g-20'>
-                <h3 className='m-auto'>Easy Meta Tag Edit</h3>
+        <div className='Coding-sec f-col px-3 py-2'>
+            <section className='f-col relative h-100 w-100 g-20'>
+                <h3 className='text-center my-3'>Meta Tag Editor</h3>
 
                 <blockquote className='code-section html br-8 f-col'>
                     <div className='head f-row f-align-center w-100'>
@@ -49,15 +62,25 @@ export default function Coding() {
                         </span>
                         <p>HTML</p>
                     </div>
-                    <textarea className='vsc-sm br-8 p-3' txtg={'vsc-sm'} onKeyDown={HandleTab} onChange={handleTextareaChange} defaultValue={`<meta property="og:title" content="Manage Tournaments" />
-<meta property="og:description" content="Manage Tournamentes complety 'FREE' in our website without any cost" />
-<meta property="og:url" content="https://Lifo123.github.io/ManageTournaments/" />
-<meta property="og:site_name" content="Manage Tournaments" />`}></textarea>
+                    <textarea className='vsc-sm br-8 p-3' txtg={'vsc-sm'} onKeyDown={HandleTab} onChange={handleTextareaChange} defaultValue={`<meta property="og:title" content="${AppContext.MetaTag.title}" />
+<meta property="og:description" content="${AppContext.MetaTag.description}" />
+<meta property="og:url" content="${AppContext.MetaTag.url}" />
+<meta property="og:image" content="${AppContext.MetaTag.image}" />
+<meta property="og:site_name" content="${AppContext.MetaTag.siteName}" />`} spellCheck='false'></textarea>
                 </blockquote>
 
-                    <CopyToClipboard text={CopyText} onCopy={(e) => e.target.innerText = 'Copied'}>
-                        <span className='btn btn-primary relative d-flex f-align-self-end br-6'>Copiar</span>
-                    </CopyToClipboard>
+                <CopyToClipboard text={CopyText} onCopy={(e) => setButtonText('Copied')}>
+                    <span className='btn btn-primary relative d-flex br-6'>{buttonText}</span>
+                </CopyToClipboard>
+                <footer className='cod-fot f-row absolute f-align-center f-justify-between'>
+                    <a href='https://github.com/Lifo123'>Lifo123</a>
+                    <div className='f-row g-10'>
+                        <span className="ski"></span>
+                        <span className="ski"></span>
+                        <span className="ski"></span>
+                        <span className="ski"></span>
+                    </div>
+                </footer>
             </section>
         </div>
     )

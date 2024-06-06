@@ -16,8 +16,8 @@ export default function Result() {
                         <div className='f-row g-10 f-align-center'>
                             <span className='ski'></span>
                             <div className='r-i-redirect f-col'>
-                                <p>Manage Tournamets</p>
-                                <p>https://lifo123.github.io/ManageTournaments/</p>
+                                <p>{AppContext.MetaTag.title}</p>
+                                <p>{AppContext.MetaTag.url}</p>
                             </div>
                             <span className='d-flex me-1' style={{ height: '20px' }}>
                                 <svg viewBox="0 0 24 24">
@@ -25,19 +25,19 @@ export default function Result() {
                                 </svg>
                             </span>
                         </div>
-                        <h2 className='mt-1'>Manage Tournaments</h2>
+                        <h2 className='mt-1'>{AppContext.MetaTag.siteName}</h2>
                     </label>
-                    <span>Manage ut any cost Manage Tournamentes complety 'FREE' in our website without any cost Manage Tournamentes complety 'FREE' in our website without any cost Manage Tournamentes complety 'FREE' in our website without any cost</span>
+                    <span>{AppContext.MetaTag.description}</span>
                 </div>
                 <div className="g-sec f-col g-5 me-2 mt-3">
                     <label className='f-col'>
-                        <h2 >Manage Tournaments</h2>
+                        <h2 >{AppContext.MetaTag.title}</h2>
                         <span className='f-row g-10 f-align-center pointer'>
-                            <p className='green'>https://lifo123.github.io/ManageTournaments/</p>
+                            <p className='green'>{AppContext.MetaTag.url}</p>
                             <span className='triangle'></span>
                         </span>
                     </label>
-                    <span>Manage ut any cost Manage Tournamentes complety 'FREE' in our website without any cost Manage Tournamentes complety 'FREE' in our website without any cost Manage Tournamentes complety 'FREE' in our website without any cost</span>
+                    <span>{AppContext.MetaTag.description}</span>
                 </div>
             </section>
 
@@ -45,12 +45,12 @@ export default function Result() {
                 <h4>Twitter</h4>
                 <div className='i-card me-2 pointer'>
                     <span className='d-flex no-select'>
-                        <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/01/how-to-join-a-fortnite-tournament.jpg" />
+                        <img src={AppContext.MetaTag.image} />
                     </span>
                     <div className='f-col g-5'>
-                        <h3 className='no-select'>Manage Tournaments</h3>
-                        <p className='description no-select'>Manage ut any cost Manage Tournamentes complety 'FREE' in our website without any cost</p>
-                        <p className='no-select'>lifo123.github.io</p>
+                        <h3 className='no-select'>{AppContext.MetaTag.siteName}</h3>
+                        <p className='description no-select'>{AppContext.MetaTag.description.length > 50 ? `${AppContext.MetaTag.description.slice(0, 100)}...`: AppContext.MetaTag.description}</p>
+                        <p className='no-select'>{AppContext.MetaTag.url}</p>
                     </div>
                 </div>
             </section>
@@ -59,12 +59,14 @@ export default function Result() {
                 <h4>Facebook</h4>
                 <div className='i-card me-2 pointer'>
                     <span className='d-flex no-select'>
-                        <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/01/how-to-join-a-fortnite-tournament.jpg" />
+                        <img src={AppContext.MetaTag.image} />
                     </span>
                     <div className='f-col g-5 no-select'>
-                        <p>lifo123.github.io</p>
-                        <h3>Manage Tournaments</h3>
-                        <p className='description'>Manage ut any cost Manage Tournamentes complety 'FREE' in our website without any cost</p>
+                        <p>{AppContext.MetaTag.url}</p>
+                        <h3>{AppContext.MetaTag.siteName}</h3>
+                        <p className='description'>
+                            {AppContext.MetaTag.description.length > 50 ? `${AppContext.MetaTag.description.slice(0, 100)}...`: AppContext.MetaTag.description}
+                        </p>
                     </div>
                 </div>
             </section>

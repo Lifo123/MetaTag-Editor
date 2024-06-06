@@ -15,7 +15,7 @@ export default function AppRoutes() {
 
     return (
         <HelmetProvider>
-            <LoadingBar color="#f11946" progress={progress} onLoaderFinished={() => setProgress(0)} height={4} className="br-max" />
+            <LoadingBar color="#0963d1" progress={progress} onLoaderFinished={() => setProgress(0)} height={4} className="br-max" />
             <Routes>
                 <Route path="/" element={<Index setProgress={setProgress} />} />
                 <Route path="/Test" element={<Test setProgress={setProgress}/>} />
