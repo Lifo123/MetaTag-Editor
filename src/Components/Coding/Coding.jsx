@@ -2,6 +2,7 @@ import './Styles/Coding.css'
 import { GContext } from '../../Context/GlobalContext';
 import { useContext, useEffect, useState } from 'react'
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { Link } from 'react-router-dom';
 
 export default function Coding() {
     //GlobalStates
@@ -33,7 +34,7 @@ export default function Coding() {
         const parser = new DOMParser();
         const doc = parser.parseFromString(value, 'text/html');
 
-        const title = doc.querySelector('meta[property="og:title"]')?.content || AppContext.MetaTag.title;
+        const title = doc.querySelector('meta[property="og:title"]')?.content;
         const description = doc.querySelector('meta[property="og:description"]')?.content;
         const url = doc.querySelector('meta[property="og:url"]')?.content;
         const image = doc.querySelector('meta[property="og:image"]')?.content;
@@ -55,10 +56,10 @@ export default function Coding() {
             <section className='f-col relative h-100 w-100 g-20'>
                 <h3 className='text-center my-3'>Meta Tag Editor</h3>
 
-                <blockquote className='code-section html br-8 f-col'>
+                <label className='code-section html br-8 f-col'>
                     <div className='head f-row f-align-center w-100'>
                         <span className='tec-logo br-50 me-2'>
-                            <img src="https://cdn.iconscout.com/icon/free/png-256/free-html-5-1-1175208.png" alt="" />
+                            <img height='30px' width='30px' src="https://cdn.iconscout.com/icon/free/png-256/free-html-5-1-1175208.png" alt="Logo Html" />
                         </span>
                         <p>HTML</p>
                     </div>
@@ -67,7 +68,7 @@ export default function Coding() {
 <meta property="og:url" content="${AppContext.MetaTag.url}" />
 <meta property="og:image" content="${AppContext.MetaTag.image}" />
 <meta property="og:site_name" content="${AppContext.MetaTag.siteName}" />`} spellCheck='false'></textarea>
-                </blockquote>
+                </label>
 
                 <CopyToClipboard text={CopyText} onCopy={(e) => setButtonText('Copied')}>
                     <span className='btn btn-primary relative d-flex br-6'>{buttonText}</span>
@@ -78,7 +79,7 @@ export default function Coding() {
                         <span className="ski"></span>
                         <span className="ski"></span>
                         <span className="ski"></span>
-                        <span className="ski"></span>
+                        <Link to={'/Test'} className='ski'>Ref</Link>
                     </div>
                 </footer>
             </section>

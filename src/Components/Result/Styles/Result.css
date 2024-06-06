@@ -2,7 +2,7 @@
     width: max-content;
 }
 
-.result h3 {
+.result > h3 {
     font-size: 16px;
     color: #323232;
 }
@@ -12,8 +12,8 @@
     margin-bottom: var(--spacing-1);
 }
 
-.result h4 {
-    color: #8b96a6;
+.result.r-item h3 {
+    color: #686973;
     margin-bottom: 1rem;
 }
 
@@ -22,7 +22,7 @@
     max-width: 690px;
 }
 
-.r-google h2 {
+.r-google h3 {
     color: #1a0dab;
     font-size: 18px;
     font-weight: 500;
@@ -117,7 +117,7 @@
 }
 
 .r-twitter>.i-card>div>p {
-    color: #86888b;
+    color: #686b6e;
     font-size: 12px;
     font-family: sans-serif;
     line-height: 1.2;

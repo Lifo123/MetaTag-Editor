@@ -10,9 +10,9 @@ export default function Result() {
             <h3>Preview</h3>
 
             <section className="r-item r-google">
-                <h4>Google</h4>
+                <h2>Google</h2>
                 <div className="f-col g-5 me-2 mb-2 mt-3">
-                    <label className='r-i-title f-col g-5 pointer'>
+                    <section className='r-i-title f-col g-5 pointer'>
                         <div className='f-row g-10 f-align-center'>
                             <span className='ski'></span>
                             <div className='r-i-redirect f-col'>
@@ -25,27 +25,27 @@ export default function Result() {
                                 </svg>
                             </span>
                         </div>
-                        <h2 className='mt-1'>{AppContext.MetaTag.siteName}</h2>
-                    </label>
+                        <h3 className='mt-1'>{AppContext.MetaTag.siteName}</h3>
+                    </section>
                     <span>{AppContext.MetaTag.description}</span>
                 </div>
                 <div className="g-sec f-col g-5 me-2 mt-3">
-                    <label className='f-col'>
-                        <h2 >{AppContext.MetaTag.title}</h2>
+                    <a href={AppContext.MetaTag.url} className='f-col txt-stl-none'>
+                        <h3 >{AppContext.MetaTag.title}</h3>
                         <span className='f-row g-10 f-align-center pointer'>
                             <p className='green'>{AppContext.MetaTag.url}</p>
                             <span className='triangle'></span>
                         </span>
-                    </label>
+                    </a>
                     <span>{AppContext.MetaTag.description}</span>
                 </div>
             </section>
 
             <section className="r-item r-twitter mt-4">
-                <h4>Twitter</h4>
+                <h2>Twitter</h2>
                 <div className='i-card me-2 pointer'>
                     <span className='d-flex no-select'>
-                        <img src={AppContext.MetaTag.image} />
+                        <img height='235px' width='410px' src={AppContext.MetaTag.image} alt='Image of Brand'/>
                     </span>
                     <div className='f-col g-5'>
                         <h3 className='no-select'>{AppContext.MetaTag.siteName}</h3>
@@ -56,10 +56,10 @@ export default function Result() {
             </section>
 
             <section className="r-item r-facebook mt-4">
-                <h4>Facebook</h4>
+                <h2>Facebook</h2>
                 <div className='i-card me-2 pointer'>
                     <span className='d-flex no-select'>
-                        <img src={AppContext.MetaTag.image} />
+                        <img height='260px' width='480px' src={AppContext.MetaTag.image}  alt='Image of Brand'/>
                     </span>
                     <div className='f-col g-5 no-select'>
                         <p>{AppContext.MetaTag.url}</p>
