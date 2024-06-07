@@ -1,25 +1,24 @@
 import './Splitter.css'
-import { Resizer } from '../../Functions/Spliters';
-import { useEffect, useRef, useState } from 'react'
+import { useSplit } from '../../hooks/useSplit/useSplit';
+import { useRef } from 'react'
 
 
-export default function SplitterContainer({ children, type = 'horizontal', base }) {
-    const [Type, setType] = useState(type && type === 'vertical' ? 'vertical' : 'horizontal');
-    //Refs
-    const splitRef = useRef();
-
-    useEffect(() => {
-        splitRef.current.parentElement.classList.add(`split-container`, Type);
-    }, [base])
-
+export default function SplitterContainer({ children, Type = 'horizontal', base = 50, Tag = 'div' }) {
+    const splitterRef = useRef(null);
+    const validType = Type === 'horizontal' || Type === 'vertical' ? Type : 'horizontal';
+    const { Split } = useSplit(splitterRef, validType, base);
 
     return (
         <>
-            <section className={`split-sec1 d-flex relative ${Type}`} style={Type === 'vertical' ? { height: `${base || 50}%` } : { width: `${base || 50}%` }}>{children && children[0] || <p>Div 1</p>}</section>
-
-            <span className={`split-btn absolute ${Type}`} onMouseDown={Resizer} style={Type === 'vertical' ? { top: `${base || 50}%` } : { left: `${base || 50}%` }} ref={splitRef}></span>
-
-            <section className={`split-sec2 d-flex relative ${Type}`}>{children && children[1] || <p>Div 2   </p>}</section>
+            {
+                children && children.length === 2 ? (
+                    <Tag className={`split-cont relative ${validType}`}>
+                        <section className={`split1`} style={validType === 'horizontal' ? {width: `${base}%`} : {height: `${base}%`}} >{children[0]}</section>
+                        <span className={`split-btn absolute ${validType}`} onMouseDown={Split} style={validType === 'horizontal' ? {left: `${base}%`} : {top: `${base}%`}} ref={splitterRef}></span>
+                        <section className={`split2`}>{children[1]}</section>
+                    </Tag>
+                ) : console.error('Error in Childres')
+            }
         </>
     )
 }

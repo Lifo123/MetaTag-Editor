@@ -3,20 +3,11 @@ import { Suspense, lazy, useEffect } from 'react'
 
 import Coding from '../../Components/Coding/Coding'
 import Result from '../../Components/Result/Result'
+import { useLoad } from '../../hooks/useLoading/useLoad';
 const SplitterContainer = lazy(() => import('../../Components/Splitter/SplitterContainer'));
 
 
-export default function Index({ setProgress }) {
-    // Global States
-
-    // Effects
-    useEffect(() => {
-        setProgress(30);
-        setTimeout(() => {
-            setProgress(100);
-        }, 200);
-    }, [setProgress]);
-
+export default function Index() {
     return (
         <>
             <main className='app-render fixed h-100 w-100'>

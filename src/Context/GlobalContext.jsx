@@ -4,11 +4,11 @@ import { useState } from "react";
 function getInitialMetaTags() {
     const localStorageData = JSON.parse(localStorage.getItem('MetaTagEdit')) || {};
     return {
-        title: localStorageData.title || document.head.querySelector('meta[property="og:title"]')?.content || '',
-        description: localStorageData.description || document.head.querySelector('meta[property="og:description"]')?.content || '',
-        url: localStorageData.url || document.head.querySelector('meta[property="og:url"]')?.content || '',
-        image: localStorageData.image || document.head.querySelector('meta[property="og:image"]')?.content || '',
-        siteName: localStorageData.siteName || document.head.querySelector('meta[property="og:site_name"]')?.content || ''
+        title: localStorageData.title || document.head.querySelector('meta[property="og:title"]')?.content,
+        description: localStorageData.description || document.head.querySelector('meta[property="og:description"]')?.content,
+        url: localStorageData.url || document.head.querySelector('meta[property="og:url"]')?.content,
+        image: localStorageData.image || document.head.querySelector('meta[property="og:image"]')?.content,
+        siteName: localStorageData.siteName || document.head.querySelector('meta[property="og:site_name"]')?.content
     };
 }
 

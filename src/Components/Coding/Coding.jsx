@@ -66,19 +66,19 @@ export default function Coding() {
                         </span>
                         <p>HTML</p>
                     </div>
-                    <textarea className='vsc-sm br-8 p-3' txtg={'vsc-sm'} onKeyDown={HandleTab} onChange={handleTextareaChange} defaultValue={`<meta property="og:title" content="${AppContext.MetaTag.title}" />
-<meta property="og:site_name" content="${AppContext.MetaTag.siteName}" />
-<meta property="og:description" content="${AppContext.MetaTag.description}" />
-<meta property="og:url" content="${AppContext.MetaTag.url}" />
-<meta property="og:image" content="${AppContext.MetaTag.image}" />`} spellCheck='false'></textarea>
-                </label>
+                    <textarea className='vsc-sm br-8 p-3' txtg={'vsc-sm'} onKeyDown={HandleTab} onChange={handleTextareaChange}  value={`<meta property="og:title" content="${AppContext.MetaTag.title}">
+<meta property="og:url" content="${AppContext.MetaTag.url}">
+<meta property="og:site_name" content="${AppContext.MetaTag.siteName}">
+<meta property="og:description" content="${AppContext.MetaTag.description}">
+<meta property="og:image" content="${AppContext.MetaTag.image}">`} spellCheck='false'></textarea>
+                </label> 
 
                 <CopyToClipboard text={CopyText} onCopy={(e) => setButtonText('Copied')}>
                     <span className='btn btn-primary relative d-flex br-6'>{buttonText}</span>
                 </CopyToClipboard>
                 <footer className='cod-fot f-row absolute f-align-center f-justify-between w-100 g-10'>
                     <a href='https://github.com/Lifo123' target='_blank'>Lifo123</a>
-                    <div className='f-row g-10'>
+                    <div className='f-row g-15'>
                         <a href='https://github.com/Lifo123/MetaTag-Editor' target='_blank'>Repository</a>
                         <Link to={'/Test'}>Documentation</Link>
                         <Link to={'/Test'} >Terms</Link>

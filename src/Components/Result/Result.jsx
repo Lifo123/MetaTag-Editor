@@ -1,5 +1,5 @@
 import './Styles/Result.css'
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import { GContext } from '../../Context/GlobalContext'
 
 export default function Result() {
@@ -9,13 +9,17 @@ export default function Result() {
     //States
     const [ResultHeight, setResultH] = useState(0);
 
-    useEffect(() => {
-        setResultH(document.querySelector('.result > .px-5').offsetHeight + document.querySelector('.result > .r-srch').offsetHeight + 85   );
-    }, [])
+    //Refs
+    const inputURL = useRef();
+
+    // useEffect(() => {
+    //     setResultH(document.querySelector('.result > .px-5').offsetHeight + document.querySelector('.result > .r-srch').offsetHeight + 85);
+    // }, [])
+
 
     return (
         <>
-            <section className='pop-icons absolute w-100 no-select' style={{height: `${ResultHeight}px`}}>
+            <section className='pop-icons absolute w-100 no-select' style={{ height: `${ResultHeight}px` }}>
                 <div className='d-flex sticky w-100'>
                     <span className='stgs-icon d-flex absolute f-center pointer' onClick={(e) => e.currentTarget.classList.toggle('active')}>
                         <svg height="30px" viewBox="0 -960 960 960" fill="#5f6368"><path d="M409-64q-14 0-24.95-8.71Q373.09-81.42 371-96l-15-98q-16-6-35.28-16.95Q301.44-221.91 287-233l-90 41q-14 7-28.5 2T147-208L77-335q-7-12-4.5-25.5T88-383l82-62q-1-6.93-1.5-18t-.5-19q0-7.41.5-17.5T170-518l-82-60q-12-9-15-22.5t5-26.5l70-126q7-12 21-16.5t28 .5l88 41q14-11 34-22.5t37-17.5l15-98q2-14 13-22.5t25-8.5h142q14 0 25 8.5t13 22.5l15 98q17 6 37.5 17.5T675-728l88-41q13.72-6 27.44-1T812-753l71 126q7 13 4 27t-15 22l-83 59q1 9 2 20t1 19q0 8-1 18.5t-1 18.5l82 60q12 8 15 22t-4 27l-70 126q-7 13-21.33 18-14.34 5-28.67-2l-90-41q-14 11-33 22.5T605-194l-16 98q-2.09 14.58-13.05 23.29Q565-64 551-64H409Zm27-73h87.85L538-250q34-8 63.91-25.08Q631.83-292.17 657-317l105 46 40-72-93-69q4-17 7-34.23 3-17.23 3-34.5 0-18.27-2.5-34.77Q714-532 710-550l92-68-39-72-106 45q-23-26-52.89-44.29-29.9-18.3-66.11-23.71l-13-111h-90l-13 111q-36 8-66.5 25.5T302-645l-104-45-41 72 93 69q-4 18-6.5 34.5t-2.5 32.92q0 16.58 2.5 33.58t6.5 36l-93 69 41 72 105-46q26 26 56 43t63 25l14 112Zm43-200q59.6 0 101.8-42.2Q623-421.4 623-481q0-59.6-42.2-101.8Q538.6-625 479-625q-60 0-102 42.2T335-481q0 59.6 42 101.8Q419-337 479-337Zm1-144Z" /></svg>
@@ -23,7 +27,7 @@ export default function Result() {
                 </div>
             </section>
             <div className='result f-col relative py-3 px-4'>
-                <section className='r-srch f-row mb-4 w-100 f-justify-between'>
+                {/* <section className='r-srch f-row mb-4 w-100 f-justify-between'>
                     <div className='r-srch-in f-row g-35 f-align-center'>
                         <span className='d-flex pointer'>
                             <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" style={{ background: "none" }} alt="Google" height="30" width="92" />
@@ -59,11 +63,11 @@ export default function Result() {
                                     </svg>
                                 </span>
                             </div>
-                            <input className='br-max' type="text" placeholder='Search URL' name='url' />
+                            <input className='br-max' type="text" placeholder='Search URL' name='url' ref={inputURL}/>
                         </label>
                     </div>
                     <button className='g-blue-btn br-6 pointer'>Fetch</button>
-                </section>
+                </section> */}
 
                 <div className='px-5'>
                     <h3>Preview</h3>
@@ -75,7 +79,7 @@ export default function Result() {
                                 <div className='f-row g-10 f-align-center'>
                                     <span className='ski'></span>
                                     <div className='r-i-redirect f-col'>
-                                        <p>{AppContext.MetaTag.title}</p>
+                                        <p>{AppContext.MetaTag.siteName}</p>
                                         <p>{AppContext.MetaTag.url}</p>
                                     </div>
                                     <span className='d-flex me-1' style={{ height: '20px' }}>
@@ -84,7 +88,7 @@ export default function Result() {
                                         </svg>
                                     </span>
                                 </div>
-                                <h3 className='mt-1'>{AppContext.MetaTag.siteName}</h3>
+                                <h3 className='mt-1'>{AppContext.MetaTag.title}</h3>
                             </a>
                             <span>{AppContext.MetaTag.description}</span>
                         </div>
@@ -108,7 +112,7 @@ export default function Result() {
                             </span>
                             <div className='f-col g-5'>
                                 <h3 className='no-select'>{AppContext.MetaTag.siteName}</h3>
-                                <p className='description no-select'>{AppContext.MetaTag.description.length > 50 ? `${AppContext.MetaTag.description.slice(0, 100)}...` : AppContext.MetaTag.description}</p>
+                                <p className='description no-select'>{AppContext.MetaTag?.description?.length > 50 ? `${AppContext.MetaTag.description.slice(0, 100)}...` : AppContext.MetaTag?.description}</p>
                                 <p className='no-select'>{AppContext.MetaTag.url}</p>
                             </div>
                         </div>
@@ -124,7 +128,7 @@ export default function Result() {
                                 <p>{AppContext.MetaTag.url}</p>
                                 <h3>{AppContext.MetaTag.siteName}</h3>
                                 <p className='description'>
-                                    {AppContext.MetaTag.description.length > 50 ? `${AppContext.MetaTag.description.slice(0, 100)}...` : AppContext.MetaTag.description}
+                                    {AppContext.MetaTag?.description?.length > 50 ? `${AppContext.MetaTag.description.slice(0, 100)}...` : AppContext.MetaTag?.description}
                                 </p>
                             </div>
                         </div>

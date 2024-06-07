@@ -1,33 +1,32 @@
 import './Test.css'
-import { useEffect } from 'react'
 
-import Coding from '../../Components/Coding/Coding'
-import Result from '../../Components/Result/Result'
 import SplitterContainer from '../../Components/Splitter/SplitterContainer';
 
 
-export default function Index({ setProgress }) {
-    // Global States
-
+export default function Index() {
+    //Custom Hooks
 
 
     // Effects
-    useEffect(() => {
-        setProgress(30);
-        setTimeout(() => {
-            setProgress(100);
-        }, 200);
-    }, [setProgress]);
+
 
     return (
-        <>
-            <main className='Test br-10'>
-                <SplitterContainer>
-                    <Coding />
-                    <Result />
+        <div className='rectangle fixed br-10'>
+            <SplitterContainer Type=''>
+                <div className='recmain1 f-col'>
+                    first content
+                    <h1>Titulo largo</h1>
+                </div>
+                <SplitterContainer Type='vertical' >
+                    <div className='recmain1 f-col'>
+                        first content
+                        <h1>Titulo largo</h1>
+                    </div>
+                    <div className='recmain1 f-col'>
+                        Second
+                    </div>
                 </SplitterContainer>
-            </main>
-
-        </>
+            </SplitterContainer>
+        </div>
     );
 }

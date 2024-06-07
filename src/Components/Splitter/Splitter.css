@@ -1,67 +1,61 @@
-.split-btn {
-    background-color: #333333;
-    display: block;
-    user-select: none;
-    transition: width 0.06s, background-color 0.2s, height 0.06s;
-    z-index: 9999;
-}
-.split-btn.horizontal{
-    height: 100%;
-    width: 4px;
-    transform: translateX(-50%);
-    top: 0;
-    cursor: e-resize;
-}
-.split-btn.vertical{
-    height: 4px;
-    width: 100%;
-    transform: translateY(-50%);
-    left: 0;
-    cursor: n-resize;
-}
-.split-btn.horizontal:hover {
-    background-color: #007ACC;
-    width: 8px;
-}
-.split-btn.vertical:hover {
-    background-color: #007ACC;
-    height: 8px;
-}
+    .split-cont {
+        display: flex;
+        overflow: hidden;
+    }
 
-.split-btn.active {
-    background-color: #007ACC;
-    z-index: 1000;
-}
+    .split-cont.horizontal {
+        height: 100%;
+        width: 100%;
+        flex-direction: row;
+    }
 
+    .split-cont.vertical {
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+    }
 
+    .split-btn {
+        background-color: #585858;
+        user-select: none;
+        transition: width, height 0.09s;
+        z-index: 10000;
+    }
 
-.split-container {
-    overflow: hidden;
-    z-index: 1000;
-    position: relative;
-}
-.split-container.horizontal{
-    display: flex;
-    flex-direction: row;
-}
-.split-container.vertical{
-    display: flex;
-    flex-direction: column;
-}
+    .split-btn.horizontal {
+        height: 100%;
+        width: 3px;
+        cursor: e-resize;
+        transform: translateX(-50%);
+    }
 
+    .split-btn.vertical {
+        height: 3px;
+        width: 100%;
+        cursor: n-resize;
+        transform: translateY(-50%);
+    }
 
-.split-sec1 {
-    overflow: auto;
-}
-.split-sec1.horizontal {
-    width: 50%;
-}
-.split-sec1.vertical {
-    height: 50%;
-}
+    .split-btn:hover {
+        background-color: #007ACC;
+    }
 
+    .split-btn.horizontal:hover {
+        width: 5px;
+    }
 
-.split-sec2 {
-    overflow: auto;
-    flex: 1;
-}
+    .split-btn.vertical:hover {
+        height: 5px;
+    }
+
+    .split-cont>section {
+        overflow: auto;
+        text-wrap: nowrap;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .split2{
+        flex: 1;
+        z-index: 100;
+    }

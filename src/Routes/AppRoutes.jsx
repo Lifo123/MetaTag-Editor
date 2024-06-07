@@ -9,17 +9,19 @@ import Index from "../Pages/Index/Index";
 import LoadingBar from "react-top-loading-bar";
 import Test from '../Pages/Testing/Test'
 
+import { useLoad } from "../hooks/useLoading/useLoad";
+
 export default function AppRoutes() {
     //States
-    const [progress, setProgress] = useState(0);
+    const {progress, setProgress} = useLoad(10);
 
     return (
         <HelmetProvider>
-            <LoadingBar color="#0963d1" progress={progress} onLoaderFinished={() => setProgress(0)} height={4} className="br-max" />
+            <LoadingBar color="#0963d1" progress={progress} onLoaderFinished={() => setProgress(0)} height={5} className="br-max"/>
             <Routes>
-                <Route path="/" element={<Index setProgress={setProgress} />} />
-                <Route path="/Test" element={<Test setProgress={setProgress}/>} />
-                <Route path="*" element={<PageNotFound setProgress={setProgress} />} />
+                <Route path="/" element={<Index />} />
+                <Route path="/Test" element={<Test />} />
+                <Route path="*" element={<PageNotFound />} />
             </Routes>
         </HelmetProvider>
     )
