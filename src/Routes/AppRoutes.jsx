@@ -1,28 +1,22 @@
-import React, { Suspense, lazy, useState } from "react";
+import React, { lazy } from "react";
 import { Route, Routes } from "react-router-dom";
-import { HelmetProvider } from 'react-helmet-async';
 
+import SuspenseWrapper from "../Components/SuspenseWrapper/SuspenseWrapper";
 
 //Imports Components
-import PageNotFound from "../Pages/PageNotFound/PageNotFound";
-import Index from "../Pages/Index/Index";
-import LoadingBar from "react-top-loading-bar";
-import Test from '../Pages/Testing/Test'
-
-import { useLoad } from "../hooks/useLoading/useLoad";
+const Index = lazy(() => import("../Pages/Index/Index"))
+const PageNotFound = lazy(() => import("../Pages/PageNotFound/PageNotFound"));
+const Editor = lazy(() => import('../Pages/Editor/Editor'))
 
 export default function AppRoutes() {
-    //States
-    const {progress, setProgress} = useLoad(10);
 
     return (
-        <HelmetProvider>
-            <LoadingBar color="#0963d1" progress={progress} onLoaderFinished={() => setProgress(0)} height={5} className="br-max"/>
-            <Routes>
-                <Route path="/" element={<Index />} />
-                <Route path="/Test" element={<Test />} />
-                <Route path="*" element={<PageNotFound />} />
-            </Routes>
-        </HelmetProvider>
+        <Routes>
+            <Route path="/" element={<SuspenseWrapper element={<Index />} />} />
+            <Route path="*" element={<SuspenseWrapper element={<PageNotFound />}/>} />
+
+            <Route path="/Edit" element={<SuspenseWrapper element={<Editor />}/>} />
+
+        </Routes>
     )
 }
