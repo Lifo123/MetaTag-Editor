@@ -8,7 +8,7 @@ export default function Editor() {
     return (
         <>
             <main className='app-render fixed h-100 w-100'>
-                <SplitterContainer type={window.innerWidth < 840 ? 'vertical' : 'horizontal'} base={window.innerWidth < 840 ? 40 : 48}>
+                <SplitterContainer type={window.innerWidth < 840 ? 'vertical' : 'horizontal'} base={window.innerWidth < 840 ? 40 : 36}>
                     <Coding />
                     <Result />
                 </SplitterContainer>
