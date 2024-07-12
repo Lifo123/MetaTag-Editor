@@ -1,3 +1,9 @@
 .app-render {
     background-color: #F8F8F8;
 }
+
+.ms-title{
+    font-size: 24px;
+    font-weight: 700;
+    font-family: Inter;
+}

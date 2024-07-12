@@ -1,4 +1,51 @@
-.cod-side{
+.cod-side {
+    border-right: solid 2px #cbcbcb;
     height: 100%;
+    width: 560px;
+    padding: 28px;
+}
+
+.cs-list {
+    border-bottom: solid 2px #D3D3D3;
+    height: 50px;
     width: 100%;
+    padding: 0px 14px 0px 8px;
+    cursor: pointer;
+}
+.cs-a-icon{
+    rotate: -90deg;
+}
+.cs-a-icon svg{
+    fill: #aaaaaa;
+    height: 30px;
+}
+
+.cod-s-footer {
+    width: 100%;
+    padding: 0px 28px;
+    bottom: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.btn-code {
+    background-color: #0E7DBB;
+    color: #FFF;
+    padding: 13px 20px;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: Inter;
+    text-align: center;
+}
+
+.cs-f-links a {
+    font-size: 14px;
+    color: #191919;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.cs-f-links>a {
+    font-weight: 600;
 }
