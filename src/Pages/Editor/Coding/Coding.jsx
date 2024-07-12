@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Coding.css'
 
 export default function Coding() {
@@ -9,10 +10,10 @@ export default function Coding() {
     return (
         <aside className='cod-side f-col relative'>
             <section className='f-col g-30'>
-                <h4 className='ms-title'>MetaTag Edit</h4>
+                <Link className='ms-title' to={'/'}>MetaTag Edit</Link>
                 <ul className='f-col'>
                     <li className='cs-list f-col br-4' onClick={HandleOpenList}>
-                        <section className='f-row f-justify-between f-align-center'>
+                        <section className='cs-l-head f-row f-justify-between f-align-center'>
                             <div className='f-row g-15'>
                                 <span>
 
@@ -27,7 +28,7 @@ export default function Coding() {
                         </section>
                     </li>
                     <li className='cs-list f-col br-4' onClick={HandleOpenList}>
-                        <section className='f-row f-justify-between f-align-center'>
+                        <section className='cs-l-head f-row f-justify-between f-align-center'>
                             <div className='f-row g-15'>
                                 <span>
 

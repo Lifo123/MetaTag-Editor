@@ -12,6 +12,9 @@
     padding: 0px 14px 0px 8px;
     cursor: pointer;
 }
+.cs-l-head{
+    height: 50px;
+}
 .cs-a-icon{
     rotate: -90deg;
 }
