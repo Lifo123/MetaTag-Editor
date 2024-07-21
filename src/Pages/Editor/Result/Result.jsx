@@ -1,8 +1,15 @@
-import { useState } from 'react'
 import './Result.css'
+import { lazy, useState } from 'react'
+import SuspenseWrapper from '../../../Components/SuspenseWrapper/SuspenseWrapper'
+
+const Google = lazy(() => import('./Google/Google'));
+const Twitter = lazy(() => import('./Twitter/Twitter'));
+const Facebook = lazy(() => import('./Facebook/Facebook'));
+const Discord = lazy(() => import('./Discord/Discord'));
+const Linkedin = lazy(() => import('./Linkedin/Linkedin'));
 
 export default function Result() {
-    const [SocialState, setSocial] = useState('google');
+    const [SocialState, setSocial] = useState('Google');
 
 
     return (
@@ -21,15 +28,15 @@ export default function Result() {
                 <p className='rs-subtitle'>Preview in {SocialState}</p>
                 {
                     SocialState === 'Google' ? (
-                        'google'
+                        <SuspenseWrapper element={<Google />} />
                     ) : SocialState === 'Twitter' ? (
-                        'twitter'
+                        <SuspenseWrapper element={<Twitter />} />
                     ) : SocialState === 'Facebook' ? (
-                        'facebook'
+                        <SuspenseWrapper element={<Facebook />} />
                     ) : SocialState === 'Discord' ? (
-                        'discord'
+                        <SuspenseWrapper element={<Discord />} />
                     ) : SocialState === 'Linkedin' ? (
-                        'linkedin'
+                        <SuspenseWrapper element={<Linkedin />} />
                     ) : null
                 }
             </section>
