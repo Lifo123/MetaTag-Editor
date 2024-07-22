@@ -67,8 +67,8 @@ export default function Result() {
                     <li className='rs-h-social linkedin br-50 pointer' onClick={() => setSocial('Linkedin')}><span className='linkedin d-flex h-100 w-100 no-select'>{Logo.linkedin}</span></li>
                 </ul>
             </section>
-            <section className='rs-main f-col'  >
-                <p className='rs-subtitle'>Preview in {SocialState}</p>
+            <section className='rs-main f-col g-20'  >
+                <p className='rs-subtitle'>{SocialState} Preview</p>
                 {
                     SocialState === 'Google' ? (
                         <SuspenseWrapper element={<Google data={MetaData.MetaTag.OG}/>} />

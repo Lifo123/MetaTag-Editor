@@ -1,0 +1,12 @@
+.t-card {
+    border-radius: 16px;
+    border: solid 1px #C2C7CA;
+    width: 510px;
+}
+
+.t-link {
+    font-size: 15px;
+    font-weight: 400;
+    font-family: Inter;
+    color: #536471;
+}

@@ -1,0 +1,29 @@
+.get-code {
+    z-index: 10;
+}
+
+
+.get-card {
+    background-color: #FFF;
+    box-shadow: 1px 3px 6px #00000025;
+    height: max-content;
+    width: 54%;
+}
+
+.get-card>textarea {
+    min-height: 420px;
+}
+
+.get-card>.btn-close {
+    height: 40px;
+    width: 40px;
+    top: 10px;
+    right: 10px;
+}
+
+
+@media(850px > width) {
+    .get-card {
+        width: 90%;
+    }
+}
