@@ -1,6 +1,7 @@
 import './Result.css'
-import { lazy, useState } from 'react'
+import { lazy, useContext, useState } from 'react'
 import SuspenseWrapper from '../../../Components/SuspenseWrapper/SuspenseWrapper'
+import { GContext } from '../../../Context/GlobalContext';
 
 const Google = lazy(() => import('./Google/Google'));
 const Twitter = lazy(() => import('./Twitter/Twitter'));
@@ -48,6 +49,9 @@ const Logo = {
 }
 
 export default function Result() {
+    //Context
+    const MetaData = useContext(GContext);
+
     const [SocialState, setSocial] = useState('Google');
 
 
@@ -55,27 +59,27 @@ export default function Result() {
         <main className='res-side f-col'>
             <section className='rs-header f-col f-align-center f-justify-center g-35'>
                 <h2 className='rs-title'>Social Media Preview</h2>
-                <ul className='f-row g-20'>
-                    <li className='rs-h-social br-50 pointer' onClick={() => setSocial('Google')}><span className='no-select'>{Logo.google}</span></li>
-                    <li className='rs-h-social br-50 pointer' onClick={() => setSocial('Twitter')}><span className='no-select'>{Logo.twitter}</span></li>
-                    <li className='rs-h-social br-50 pointer' onClick={() => setSocial('Facebook')}><span className='no-select'>{Logo.facebook}</span></li>
-                    <li className='rs-h-social br-50 pointer' onClick={() => setSocial('Discord')}><span className='no-select'>{Logo.discord}</span></li>
-                    <li className='rs-h-social br-50 pointer' onClick={() => setSocial('Linkedin')}><span className='no-select'>{Logo.linkedin}</span></li>
+                <ul className='f-row g-25'>
+                    <li className='rs-h-social google br-50 pointer' onClick={() => setSocial('Google')}><span className='google d-flex h-100 w-100 no-select'>{Logo.google}</span></li>
+                    <li className='rs-h-social twitter br-50 pointer' onClick={() => setSocial('Twitter')}><span className='twitter d-flex h-100 w-100 no-select'>{Logo.twitter}</span></li>
+                    <li className='rs-h-social facebook br-50 pointer' onClick={() => setSocial('Facebook')}><span className='facebook d-flex h-100 w-100 no-select'>{Logo.facebook}</span></li>
+                    <li className='rs-h-social discord br-50 pointer' onClick={() => setSocial('Discord')}><span className='discord d-flex h-100 w-100 no-select'>{Logo.discord}</span></li>
+                    <li className='rs-h-social linkedin br-50 pointer' onClick={() => setSocial('Linkedin')}><span className='linkedin d-flex h-100 w-100 no-select'>{Logo.linkedin}</span></li>
                 </ul>
             </section>
             <section className='rs-main f-col'  >
                 <p className='rs-subtitle'>Preview in {SocialState}</p>
                 {
                     SocialState === 'Google' ? (
-                        <SuspenseWrapper element={<Google />} />
+                        <SuspenseWrapper element={<Google data={MetaData.MetaTag.OG}/>} />
                     ) : SocialState === 'Twitter' ? (
-                        <SuspenseWrapper element={<Twitter />} />
+                        <SuspenseWrapper element={<Twitter data={MetaData.MetaTag.Twitter}/>} />
                     ) : SocialState === 'Facebook' ? (
-                        <SuspenseWrapper element={<Facebook />} />
+                        <SuspenseWrapper element={<Facebook data={MetaData.MetaTag.OG}/>} />
                     ) : SocialState === 'Discord' ? (
-                        <SuspenseWrapper element={<Discord />} />
+                        <SuspenseWrapper element={<Discord data={MetaData.MetaTag.OG}/>} />
                     ) : SocialState === 'Linkedin' ? (
-                        <SuspenseWrapper element={<Linkedin />} />
+                        <SuspenseWrapper element={<Linkedin data={MetaData.MetaTag.OG}/>} />
                     ) : null
                 }
             </section>

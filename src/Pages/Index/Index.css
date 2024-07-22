@@ -4,10 +4,41 @@
     border-bottom: solid 1px #DFDFDF;
     box-shadow: 0px 0px 6px #00000026;
 }
+.i-header a{
+    text-decoration: none;
+}
+.i-header > a{
+    font-size: 26px;
+    font-weight: 700;
+    color: #212125;
+}
+.i-h-nav{
+    list-style: none;
+}
+.i-h-nav a{
+    font-size: 15px;
+    color: #212125;
+}
+
+
 
 .i-main{
     height: calc(100% - 70px);
     width: 100%;
+}
+.i-main > h1{
+    width: 820px;
+    margin-top: 110px;
+    font-size: 56px;
+    font-weight: 700;
+    color: #1f2229; 
+}
+.i-main > p{
+    width: 510px;
+    font-size: 22px;
+    font-weight: 500;
+    margin-top: 18px;
+    color: #333843;
 }
 
 .i-btn{

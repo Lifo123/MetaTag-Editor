@@ -1,19 +1,19 @@
 import './Discord.css'
 
-export default function Discord() {
+export default function Discord({ data }) {
     return (
-        <main>
-            <section>
-                <span>MetaTag-Editor</span>
-                <a>MetaTag Editor - Preview</a>
-                <p>With Meta Tags you can edit and experiment with your content then preview how your Web...</p>
+        <main className='f-col g-20'>
+            <section className='f-col'>
+                <span>{data.SiteName || 'MetaTag-Editor'}</span>
+                <a href={data.URL || 'https://Lifo123.github.io/MetaTag-Editor/'}>{data.Tittle || 'MetaTag Editor - Preview'}</a>
+                <p>{data.Description || 'With Meta Tags you can edit and experiment with your content then preview how your webpage will look on Google, Facebook, Twitter and more!'}</p>
             </section>
-            <section>
-                <span>MetaTag-Editor</span>
-                <a>MetaTag Editor - Preview</a>
-                <p>With Meta Tags you can edit and experiment with your content then preview how your Web...</p>
+            <section className='f-col'>
+                <span>{data.SiteName || 'MetaTag-Editor'}</span>
+                <a href={data.URL || 'https://Lifo123.github.io/MetaTag-Editor/'}>{data.Tittle || 'MetaTag Editor - Preview'}</a>
+                <p>{data.Description || 'With Meta Tags you can edit and experiment with your content then preview how your webpage will look on Google, Facebook, Twitter and more!'}</p>
                 <div>
-                    img
+                    {data.ImgURL}
                 </div>
             </section>
         </main>

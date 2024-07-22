@@ -1,30 +1,43 @@
 import { createContext, useEffect } from "react"
 import { useState } from "react";
 
-function getInitialMetaTags() {
-    const localStorageData = JSON.parse(localStorage.getItem('MetaTagEdit')) || {};
-    return {
-        title: localStorageData.title || document.head.querySelector('meta[property="og:title"]')?.content,
-        description: localStorageData.description || document.head.querySelector('meta[property="og:description"]')?.content,
-        url: localStorageData.url || document.head.querySelector('meta[property="og:url"]')?.content,
-        image: localStorageData.image || document.head.querySelector('meta[property="og:image"]')?.content,
-        siteName: localStorageData.siteName || document.head.querySelector('meta[property="og:site_name"]')?.content
-    };
-}
-
 export const GContext = createContext();
+
+const MetagData = {
+    OG: {
+        SiteName: '',
+        Tittle: '',
+        URL: '',
+        Description: '',
+        ImgURL: ''
+    },
+    Twitter: {
+        SiteName: '',
+        Tittle: '',
+        URL: '',
+        Description: '',
+        ImgURL: ''
+    }
+}
 
 export default function GlobalContext({ children }) {
     //GlobalContext
-    const [MetaTag, setMetaTags] = useState(getInitialMetaTags());
+    const [MetaTag, setMetaTags] = useState(MetagData);
 
-    useEffect(() => {
-        localStorage.setItem('MetaTagEdit', JSON.stringify(MetaTag))
-    }, [MetaTag])
+    //Functions
+    const ManageData = (section, key, value) => {
+        setMetaTags(prevMetaTags => ({
+            ...prevMetaTags,
+            [section]: {
+                ...prevMetaTags[section],
+                [key]: value
+            }
+        }));
+    }
 
     return (
         <GContext.Provider value={{
-            MetaTag, setMetaTags,
+            MetaTag, ManageData
         }}>
             {children}
         </GContext.Provider>

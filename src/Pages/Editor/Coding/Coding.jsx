@@ -1,7 +1,11 @@
-import { Link } from 'react-router-dom';
 import './Coding.css'
+import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { GContext } from '../../../Context/GlobalContext';
 
 export default function Coding() {
+    //Context
+    const MetaData = useContext(GContext);
 
     const HandleOpenList = (e) => {
         const parent = e.target.parentElement;
@@ -10,6 +14,17 @@ export default function Coding() {
         parent.style.height = parent.classList.contains('active') ? `${60 + height}px` : ``;
     };
 
+    //Functions
+    const GetCode = () => {
+        console.log(MetaData);
+    }
+
+    const HandleManageInput = (e) => {
+        const section = e.target.parentElement.getAttribute('sec');
+        const key = e.target.getAttribute('val');
+        const value = e.target.value;
+        MetaData.ManageData(section, key, value);
+    }
 
     return (
         <aside className='cod-side f-col relative'>
@@ -18,8 +33,8 @@ export default function Coding() {
                     <Link className='ms-title' to={'/'}>MetaTag Edit</Link>
                 </span>
                 <ul className='f-col'>
-                    <li className='cs-list f-col g-20'>
-                        <section className='cs-l-head f-row f-justify-between f-align-center' onClick={HandleOpenList}>
+                    <li className='cs-list f-col g-20' >
+                        <section className='cs-l-head f-row f-justify-between f-align-center' onClick={HandleOpenList} >
                             <div className='f-row g-15 no-select'>
                                 <span>
 
@@ -32,12 +47,12 @@ export default function Coding() {
                                 </svg>
                             </span>
                         </section>
-                        <section className='cs-l-cont f-col g-10'>
-                            <input type="text" placeholder='Site Name' />
-                            <input type="text" placeholder='Tittle' />
-                            <input type="text" placeholder='URL' />
-                            <textarea placeholder='Description'></textarea>
-                            <input type="text" placeholder='Img URL'/>
+                        <section className='cs-l-cont f-col g-10' sec='OG'>
+                            <input type="text" placeholder='OG: Site Name' onChange={HandleManageInput} val='SiteName' />
+                            <input type="text" placeholder='OG: Tittle' onChange={HandleManageInput} val='Tittle' />
+                            <input type="text" placeholder='OG: URL' onChange={HandleManageInput} val='URL' />
+                            <textarea placeholder='OG: Description' onChange={HandleManageInput} val='Description'></textarea>
+                            <input type="text" placeholder='OG: Img URL' onChange={HandleManageInput} val='ImgURL' />
                         </section>
                     </li>
                     <li className='cs-list f-col g-20'>
@@ -54,22 +69,22 @@ export default function Coding() {
                                 </svg>
                             </span>
                         </section>
-                        <section className='cs-l-cont f-col g-10'>
-                            <input type="text" placeholder='Site Name' />
-                            <input type="text" placeholder='Tittle' />
-                            <input type="text" placeholder='URL' />
-                            <textarea placeholder='Description'></textarea>
-                            <input type="text" placeholder='Img URL'/>
+                        <section className='cs-l-cont f-col g-10' sec='Twitter'>
+                            <input type="text" placeholder='Twitter: Site Name' onChange={HandleManageInput} val='SiteName' />
+                            <input type="text" placeholder='Twitter: Tittle' onChange={HandleManageInput} val='Tittle' />
+                            <input type="text" placeholder='Twitter: URL' onChange={HandleManageInput} val='URL' />
+                            <textarea placeholder='Twitter: Description' onChange={HandleManageInput} val='Description'></textarea>
+                            <input type="text" placeholder='Twitter: Img URL' onChange={HandleManageInput} val='ImgURL' />
                         </section>
                     </li>
                 </ul>
             </section>
             <section className='cod-s-footer f-col g-25 w-100'>
-                <span className='btn-code br-6 pointer'>{' <Get Code/> '}</span>
+                <span className='btn-code br-6 pointer' onClick={GetCode}>{' <Get Code/> '}</span>
                 <label className='cs-f-links f-row f-justify-between f-align-center'>
                     <a href="">LIFO</a>
                     <span className='f-row g-10'>
-                        <a href="">Repository</a>
+                        <a href="https://github.com/Lifo123/MetaTag-Editor">Repository</a>
                         <a href="">Terms</a>
                         <a href="">Documentation</a>
                     </span>
