@@ -3,15 +3,7 @@ import './Google.css'
 export default function Google({ data }) {
 
     return (
-        <main className='r-google f-col g-20'>
-            <section className='r-google-first f-col'>
-                <div className='f-col f-align-start'>
-                    <a className='g-title pointer'>{data.SiteName || 'MetaTag-Editor'}</a>
-                    <a className='g-link pointer'>{data.URL || 'https://Lifo123.github.io/MetaTag-Editor/'}</a>
-                </div>
-                <p className='g-desc'>{`${data.Description.slice(0, 184)}` || 'With Meta Tags you can edit and experiment with your content then preview how your webpage will look on Google, Facebook, Twitter and more!'}{data.Description.length >= 184 ? '...' : null}</p>
-            </section>
-
+        <main className='r-google f-col g-25'>
             <section className='r-google-sec f-col'>
                 <label className='f-row f-align-center g-10'>
                     <span className='rgs-logo pointer'>
@@ -39,7 +31,7 @@ export default function Google({ data }) {
                     </span>
                     <a className='f-col pointer'>
                         <p className='gs-title'>{data.SiteName || 'MetaTag-Editor'}</p>
-                        <p className='gs-link'>{data.URL || 'https://Lifo123.github.io/MetaTag...'}</p>
+                        <p className='gs-link'>{data.URL.slice(0, 30) || 'https://Lifo123.github.io/MetaTag...'}{data.URL.length > 30 ? '...' : null}</p>
                     </a>
                     <span className='d-flex f-center rgs-logo pointer'>
                         <svg className='no-select' viewBox="0 0 24 24" fill="none">
@@ -50,6 +42,13 @@ export default function Google({ data }) {
                     </span>
                 </label>
                 <p className='g-title mt-10 pointer'>{data.Tittle || 'MetaTags Editor - Preview'}</p>
+                <p className='g-desc'>{`${data.Description.slice(0, 184)}` || 'With Meta Tags you can edit and experiment with your content then preview how your webpage will look on Google, Facebook, Twitter and more!'}{data.Description.length > 184 ? '...' : null}</p>
+            </section>
+            <section className='r-google-first f-col'>
+                <div className='f-col f-align-start'>
+                    <a className='g-title pointer'>{data.SiteName || 'MetaTag-Editor'}</a>
+                    <a className='g-link pointer'>{data.URL || 'https://Lifo123.github.io/MetaTag-Editor/'}</a>
+                </div>
                 <p className='g-desc'>{`${data.Description.slice(0, 184)}` || 'With Meta Tags you can edit and experiment with your content then preview how your webpage will look on Google, Facebook, Twitter and more!'}{data.Description.length >= 184 ? '...' : null}</p>
             </section>
         </main>

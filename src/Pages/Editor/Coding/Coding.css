@@ -23,9 +23,17 @@
 .cs-l-head {
     height: 50px;
     border-bottom: solid 2px #D3D3D3;
-    padding: 10px 6px;
+    padding: 12px 6px 12px 14px;
 }
-
+.cs-g-logo{
+    height: 22px;
+    width: 22px;
+}
+.cs-t-logo{
+    height: 22px;
+    width: 22px;
+    scale: 1.4;
+}
 .cs-a-icon {
     rotate: -90deg;
 }

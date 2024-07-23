@@ -2,6 +2,7 @@
     border-radius: 16px;
     border: solid 1px #C2C7CA;
     width: 510px;
+    flex-wrap: wrap;
 }
 
 .t-link {
@@ -9,4 +10,9 @@
     font-weight: 400;
     font-family: Inter;
     color: #536471;
+}
+
+.tc-noimg{
+    height: 130px;
+    width: 130px;
 }

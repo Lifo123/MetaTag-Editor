@@ -7,7 +7,7 @@
 
 .g-title{
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 400;
     color: #1A0DAB;
     font-size: Inter;
 }
@@ -37,12 +37,12 @@
 }
 
 .gs-title{
-    font-size: 15px;
-    font-weight: 500;
+    font-size: 14.5px;
+    font-weight: 400;
     color: #202124;
 }
 .gs-link{
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 400;
     color: #4D5156;
 }
