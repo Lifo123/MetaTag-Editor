@@ -1,11 +1,11 @@
 .cod-side {
     border-right: solid 2px #cbcbcb;
     height: 100%;
-    width: 560px;
+    width: 600px;
 }
 .cod-s-cont{
     height: calc(100% - 80px);
-    padding: 28px 28px 0px 28px;
+    padding: 34px 34px 0px 34px;
     overflow: auto;
 }
 
@@ -65,7 +65,7 @@
 .cod-s-footer {
     background-color: #FFF;
     width: 100%;
-    padding: 0px 28px 28px 28px;
+    padding: 0px 34px 34px 34px;
 }
 
 .btn-code {
