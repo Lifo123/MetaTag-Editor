@@ -13,12 +13,12 @@ export default function Discord({ data }) {
                 </svg>
             </span>
             <div className='f-ds-sec f-col g-20 br-10'>
-                <section className='f-ds-info f-col br-4' style={{ width: '400px' }}>
+                <section className='f-ds-info f-col' style={{ width: '400px' }}>
                     <span className='pointer'>{data.SiteName || 'MetaTag-Editor'}</span>
                     <label className='pointer'>{`${data.Tittle.slice(0, 36)}` || 'MetaTag Editor - Preview'}{data.Tittle.length > 36 ? '...' : null}</label>
                     <p>{`${data.Description.slice(0, 97)}` || 'With Meta Tags you can edit and experiment with your content then preview how your webpage will look...'}{data.Description.length > 97 ? '...' : null}</p>
                 </section>
-                <section className='f-ds-info f-col br-4'>
+                <section className='f-ds-info f-col'>
                     <span className='pointer'>{data.SiteName || 'MetaTag-Editor'}</span>
                     <label className='pointer'>{`${data.Tittle.slice(0, 44)}` || 'MetaTag Editor - Preview'}{data.Tittle.length > 44 ? '...' : null}</label>
                     <p>{`${data.Description.slice(0, 117)}` || 'With Meta Tags you can edit and experiment with your content then preview how your webpage will look...'}{data.Description.length > 117 ? '...' : null}</p>
