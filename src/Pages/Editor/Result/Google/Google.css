@@ -17,6 +17,7 @@
     font-weight: 400;
     font-family: Inter;
     color: #006621;
+    word-break: break-all;
 }
 
 .g-desc{

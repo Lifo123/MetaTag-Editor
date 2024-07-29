@@ -1,10 +1,13 @@
 import './Facebook.css'
 
 export default function Facebook({ data }) {
+    //States
+    const SimpleURL = `${data.URL.split('https://')}`.split('/')[0].replace(',', '');
+
     return (
         <main className='f-col g-20'>
             <section className='f-fot-info br-6 f-col relative'>
-                <p className='pointer'>{data.URL || 'lifo123.github.io'}</p>
+                <p className='pointer'>{SimpleURL || 'lifo123.github.io'}</p>
                 <label className='pointer'>{`${data.Tittle.slice(0, 57)}` || 'MetaTag Editor - Preview'}{data.Tittle.length > 57 ? '...' : null}</label>
                 <span className='d-flex f-center br-50 absolute pointer'>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
@@ -24,8 +27,8 @@ export default function Facebook({ data }) {
                         </svg>
                     }
                 </span>
-                <div className='f-fot-info f-col relative' style={{borderRadius: '0px 0px 6px 6px'}}>
-                    <p className='pointer'>{data.URL || 'lifo123.github.io'}</p>
+                <div className='f-fot-info f-col relative' style={{ borderRadius: '0px 0px 6px 6px' }}>
+                    <p className='pointer'>{SimpleURL || 'lifo123.github.io'}</p>
                     <label className='pointer'>{`${data.Tittle.slice(0, 57)}` || 'MetaTag Editor - Preview'}{data.Tittle.length > 57 ? '...' : null}</label>
                     <p>{`${data.Description.slice(0, 134)}` || 'With Meta Tags you can edit and experiment with your content then preview how your Web...'}{data.Description.length > 134 ? '...' : null}</p>
                     <span className='d-flex f-center br-50 absolute pointer'>

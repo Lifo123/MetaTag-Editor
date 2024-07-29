@@ -52,7 +52,7 @@ export default function Coding() {
                     </span>
                     <ul className='f-col'>
                         <li className='cs-list f-col g-20 active' style={{ height: 'max-content' }}>
-                            <section className='cs-l-head f-row f-justify-between f-align-center' onClick={HandleOpenList} >
+                            <section className='cs-l-head f-row f-justify-between f-align-center pointer' onClick={HandleOpenList} >
                                 <div className='f-row g-15 no-select f-align-center'>
                                     <span className='cs-g-logo'>
                                         <svg viewBox="-0.5 0 48 48">
@@ -94,7 +94,7 @@ export default function Coding() {
                             </section>
                         </li>
                         <li className='cs-list f-col g-20'>
-                            <section className='cs-l-head f-row f-justify-between f-align-center' onClick={HandleOpenList}>
+                            <section className='cs-l-head f-row f-justify-between f-align-center pointer' onClick={HandleOpenList}>
                                 <div className='f-row g-15 no-select f-align-center'>
                                     <span className='cs-t-logo'>
                                         <svg viewBox="0 0 48 48" fill="none">

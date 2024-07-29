@@ -4,6 +4,7 @@ import './Discord.css'
 export default function Discord({ data }) {
     //States
     const [DarkModeDC, setDarkModeDC] = useState(true);
+    
 
     return (
         <main className={`f-col g-10 relative ${DarkModeDC ? 'dark' : 'light'}`}>

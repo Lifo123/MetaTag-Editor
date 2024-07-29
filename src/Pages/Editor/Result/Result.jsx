@@ -61,10 +61,10 @@ export default function Result() {
                 <h2 className='rs-title'>Social Media Preview</h2>
                 <ul className='f-row g-25'>
                     <li className='rs-h-social google br-50 pointer' onClick={() => setSocial('Google')}><span className='google d-flex h-100 w-100 no-select'>{Logo.google}</span></li>
-                    <li className='rs-h-social twitter br-50 pointer' onClick={() => setSocial('Twitter')}><span className='twitter d-flex h-100 w-100 no-select'>{Logo.twitter}</span></li>
                     <li className='rs-h-social facebook br-50 pointer' onClick={() => setSocial('Facebook')}><span className='facebook d-flex h-100 w-100 no-select'>{Logo.facebook}</span></li>
                     <li className='rs-h-social discord br-50 pointer' onClick={() => setSocial('Discord')}><span className='discord d-flex h-100 w-100 no-select'>{Logo.discord}</span></li>
                     <li className='rs-h-social linkedin br-50 pointer' onClick={() => setSocial('Linkedin')}><span className='linkedin d-flex h-100 w-100 no-select'>{Logo.linkedin}</span></li>
+                    <li className='rs-h-social twitter br-50 pointer' onClick={() => setSocial('Twitter')}><span className='twitter d-flex h-100 w-100 no-select'>{Logo.twitter}</span></li>
                 </ul>
             </section>
             <section className='rs-main f-col g-20'  >

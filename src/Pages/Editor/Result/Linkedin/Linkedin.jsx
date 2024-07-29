@@ -1,11 +1,13 @@
 import './Linkedin.css'
 
 export default function Linkedin({ data }) {
+    const SimpleURL = `${data.URL.split('https://')}`.split('/')[0].replace(',', '');
+
     return (
         <main className='f-col g-20'>
             <section className='l-sec-info f-col br-6'>
                 <p className='info-title pointer'>{data.Tittle || 'MetaTag Editor - Preview'}</p>
-                <p className='pointer'>{data.URL || 'lifo123.github.io'}</p>
+                <p className='pointer'>{SimpleURL.slice(0,40) || 'lifo123.github.io'}</p>
             </section>
             <section className='f-col'>
                 <span className='l-link-img d-flex f-center pointer'>
@@ -19,7 +21,7 @@ export default function Linkedin({ data }) {
                 </span>
                 <div className='l-sec-info f-col' style={{ borderRadius: '0px 0px 6px 6px' }}>
                     <p className='info-title pointer'>{data.Tittle || 'MetaTag Editor - Preview'}</p>
-                    <p className='pointer'>{data.URL || 'lifo123.github.io'}</p>
+                    <p className='pointer'>{SimpleURL.slice(0,40) || 'lifo123.github.io'}</p>
                 </div>
             </section>
         </main>
