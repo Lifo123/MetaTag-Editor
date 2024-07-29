@@ -1,0 +1,35 @@
+.f-fot-info{
+    width: 620px;
+    border: solid 1px #C2C7CA;
+    padding: 16px;
+    align-items: start;
+    gap: 2px;
+}
+.f-fot-info p{
+    font-size: 13px;
+    font-weight: 400;
+    color: #3A4045;
+    font-family: Inter;
+}
+.f-fot-info label{
+    font-size: 17px;
+    font-family: Inter;
+    color: #3A4045;
+}
+.f-fot-info span{
+    background-color: #F3F3F3   ;
+    height: 30px;
+    width: 30px;
+    top: -16px;
+    right: 32px;
+}
+.f-fot-info span svg{
+    fill: #3A4045;
+}
+.f-fb-img{
+    background-color: #F3F3F3;
+    border: solid 1px #C2C7CA;
+    border-bottom: none;
+    width: 620px;
+    height: 340px;
+}

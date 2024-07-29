@@ -26,7 +26,7 @@ export default function Twitter({ data }) {
                     </svg>
                     <p className='t-c-toltip absolute br-4 no-select'>{`${data.SiteName.slice(0,40)}` || 'MetaTag-Editor'}</p>
                 </div>
-                <span className='t-link f-row g-5' style={{ fontSize: '13px' }}>From <p className='t-link pointer' style={{ fontSize: '13px' }}>{data.URL || 'lifo123.github.io'}</p></span>
+                <span className='t-link f-row g-5' style={{ fontSize: '14px' }}>From <p className='t-link pointer' style={{ fontSize: '14npx' }}>{data.URL || 'lifo123.github.io'}</p></span>
             </section>
         </main>
     )
