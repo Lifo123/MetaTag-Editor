@@ -83,6 +83,7 @@ export default function Result() {
                     ) : null
                 }
             </section>
+            
         </main>
     )
 }

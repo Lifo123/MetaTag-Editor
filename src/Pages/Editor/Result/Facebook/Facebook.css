@@ -10,6 +10,7 @@
     font-weight: 400;
     color: #3A4045;
     font-family: Inter;
+    word-break: break-all;
 }
 .f-fot-info label{
     font-size: 17px;

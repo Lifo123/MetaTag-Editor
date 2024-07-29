@@ -1,0 +1,78 @@
+.togle-ds {
+    height: 42px;
+    width: 42px;
+    top: 14px;
+    right: 14px;
+}
+
+.light {
+    --ds-btn: #000;
+    --ds-bg: #F8F8F8;
+    --ds-card: #F2F3F5;
+    --ds-border: #cfcfcf;
+    --ds-text: #444648;
+    --ds-tittle: #0b82f7;
+    --ds-icon: #a1a1a1;
+    --ds-imgbr: #bec1c3;
+}
+
+.dark {
+    --ds-btn: #efefef;
+    --ds-bg: #313338;
+    --ds-card: #2B2D31;
+    --ds-border: #1E1F22;
+    --ds-text: #D5DEE1;
+    --ds-tittle: #00A8FC;
+    --ds-icon: #6b6d6f;
+    --ds-imgbr: #424649;
+}
+
+.togle-ds svg {
+    fill: var(--ds-btn);
+}
+
+.f-ds-sec {
+    background-color: var(--ds-bg);
+    padding: 32px;
+    color: var(--ds-text);
+    font-size: 12.5px;
+}
+
+.f-ds-info {
+    border-left: solid 4px var(--ds-border);
+    border-radius: 5px;
+    background-color: var(--ds-card);
+    min-width: 380px;
+    max-width: 480px;
+    padding: 18px 20px 18px 16px;
+    gap: 8px;
+    align-items: start;
+}
+
+.f-ds-info span {
+    font-weight: 400;
+    font-size: 11px;
+    letter-spacing: 0.1px;
+}
+
+.f-ds-info label {
+    color: var(--ds-tittle);
+    font-size: 16px;
+}
+
+.f-ds-info p {
+    font-weight: 400;
+    line-height: 18px;
+    word-break: break-all;
+}
+
+.ds-img {
+    background-color: var(--ds-bg);
+    border: solid 1px var(--ds-imgbr);
+    height: 210px;
+    width: 100%;
+}
+
+.ds-img svg {
+    stroke: var(--ds-icon);
+}
