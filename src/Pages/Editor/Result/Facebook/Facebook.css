@@ -29,6 +29,7 @@
 }
 .f-fb-img{
     background-color: #F3F3F3;
+    border-radius: 6px 6px 0px 0px;
     border: solid 1px #C2C7CA;
     border-bottom: none;
     width: 620px;

@@ -1,0 +1,27 @@
+.l-sec-info{
+    border: solid 1px #C2C7CA;
+    width: 550px;
+    padding: 14px 16px;
+    gap: 4px;
+    align-items: start;
+}
+.l-sec-info p {
+    word-break: break-all;
+    font-weight: 400;
+    font-size: 13px;
+    font-family: Inter;
+    color: #3A4045;
+}
+.l-sec-info .info-title{
+    font-weight: 500;
+    font-size: 17px;
+    color: #242526;
+}
+
+.l-link-img{
+    border: solid 1px #C2C7CA;
+    border-radius: 6px 6px 0px 0px;
+    border-bottom: none;
+    height: 270px;
+    width: 550px;
+}
